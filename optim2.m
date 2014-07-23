@@ -1,3 +1,7 @@
+% TM-SWIFT genetic algorithm
+% This code contains the GUI elements.
+% Need to clean this for command line use
+
 function varargout = optim2(varargin)
 gui_Singleton = 1;
 gui_State = struct('gui_Name',       mfilename, ...
