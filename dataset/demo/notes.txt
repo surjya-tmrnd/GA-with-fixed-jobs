@@ -1,0 +1,13 @@
+
+Haversine
+formula:	 a = sin²(?f/2) + cos f1 · cos f2 · sin²(??/2)
+
+c = 2 · atan2( va, v(1-a) )
+
+d = R · c
+
+where	f is latitude, ? is longitude, R is earth’s radius (mean radius = 6,371km);
+note that angles need to be in radians to pass to trig functions!
+
+1 degree =
+0.0174532925 radians

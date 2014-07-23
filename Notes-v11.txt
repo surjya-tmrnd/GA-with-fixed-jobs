@@ -1,0 +1,51 @@
+Working fine with following features
+
+- Load data from csv file for order locations
+- Select the Hi-Severity points on the plot
+- Form the cluster with minimum distance alto
+- Find shortest distance using GA
+- Apply constraint for maximum distance that will be travelled per day to each cluster
+- Provide summary report
+
+Ammendment :
+
+- Instead of forming clusters by chosing centroids manually, it is done as below
+    * Find out which jobs can go to which teams based on area and skillset.
+    * When there is multiple teams can be assigned to a single job, then choose whichever is team is 
+    nearer to that job location
+
+Ammendment - 
+
+Instead of nearest location, the job is assigned to the team based on equal distribution criteria
+
+Version 4
+------------
+Greedy algorithm applied
+Results are checked and it seems we found the optimum solution
+going to use GA for team assignment
+
+Version 5
+------------
+GA is implemented. Now in the result, the total time taken to finish all the job is better in this algorithm. But when we look at the priority wise, each team serves the jobs according to priority but in the overall case the lower priority jobs may be served before the higher priority jobs. To overcome this problem, we let the user decide which is priority to them. So we consider, the total time taken to finish all job and the priority served first criteria in the fitness function. This will be done in version 6.
+
+version 6
+----------
+Apart from total time taken which is sum of distance and duration, in this version we have taken into account 3 factors which effect the output.
+1. Total cost of the solution which is distance + duration of all the jobs distributed to teams. Distance_score
+2. Degree of satisfaction for the criteria that priority orders will be served first.
+3. Balance of work distribution among teams
+
+Adding the lunch_time feature
+-----------------------------
+1. The input csv file for teams will be containing the lunch time
+Now as this is another feature, the algorithm will be optimized as lunch-time deviation.
+
+Adding the fixed job matter
+--------------------------
+May be will remove the lunchtime deviation method and will include different approach.
+
+realjobs.csv - jobID,long,lat,building,skillset,toolbox,duration,weightage
+realteams.csv - teamID,long,lat,building,skillset,toolbox,next_available_time
+realfixjobs.csv - jobID,type,long,lat,start_time,duration,building,skillset,toolbox, weightage
+
+
